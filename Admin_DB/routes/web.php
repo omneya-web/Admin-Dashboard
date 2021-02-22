@@ -19,4 +19,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','HomeController@index')->name('home');
+
+<<<<<<< Updated upstream
+=======
+
+Route::get('/profile', 'HomeController@profile');
+
+Route::get('/feedback','HomeController@feedback');
+
+Route::get('/places','HomeController@places');
+
+Route::get('/primaryexamination','HomeController@primaryexamination');
+
+Route::get('/message','HomeController@message');
+
+Route::get('/reply','HomeController@reply');
+
+
+
+>>>>>>> Stashed changes

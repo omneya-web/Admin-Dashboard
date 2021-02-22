@@ -25,4 +25,38 @@ class HomeController extends Controller
     {
         return view('home');
     }
+<<<<<<< Updated upstream
+=======
+       
+
+    public function profile()
+    {
+
+        return view('Profile');
+    }
+    public function feedback()
+        {
+
+          return view('feedback');
+        }
+        public function places()
+        {
+
+        }
+        public function primaryexamination()
+        {
+            return view('primaryexamination');
+        }
+        public function message()
+        {
+            return view('message');
+        }
+
+        public function reply()
+        {
+            return view('reply');
+        }
+    
+
+>>>>>>> Stashed changes
 }
