@@ -42,6 +42,7 @@ class HomeController extends Controller
         public function places()
         {
 
+          return view('places');
         }
         public function primaryexamination()
         {
