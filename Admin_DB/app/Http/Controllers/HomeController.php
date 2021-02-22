@@ -26,16 +26,45 @@ class HomeController extends Controller
         return view('home');
     }
        
-    public function test()
-    {
-
-        return view('testhome');
-    }
-
+   
     public function profile()
     {
 
         return view('adminprofile');
     }
+    public function Users ()
+    {
+
+        return view('users');
+    }
+    public function Admins()
+    {
+
+        return view('admins');
+    }
+    
+    public function addUser()
+    {
+
+        return view('addUser');
+    }
+    public function addAdmin()
+    {
+
+        return view('addAdmin');
+    }
+    
+
+   
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -17,8 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::get('/login', 'LoginController@__construct')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'HomeController@profile');
+Route::get('/users', 'HomeController@Users');
+
+
+
+Route::get('/admins', 'HomeController@Admins');
+
+Route::get('/addUser', 'HomeController@addUser');
+Route::get('/addAdmin', 'HomeController@addAdmin');
+Route::get('/userDetails', 'UserController@userDetails');
+Route::get('/medical', 'UserController@showMedical');
+Route::get('/adminDetails', 'AdminController@adminDetails');

@@ -67,9 +67,9 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="/dist/img/logo-puris.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="/dist/img/logo-puris.png" alt="Scan_Ray" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin-Puris</span>
+      <span class="brand-text font-weight-light">Admin</span>
     </a>
 
     <!-- Sidebar -->
@@ -80,7 +80,7 @@
           <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/" class="d-block">dflksdnf</a>
+          <a href="/" class="d-block">AdminName</a>
         </div>
       </div>
 
@@ -90,93 +90,92 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-
-
-
-
-
-
-
-
-
-
           <li class="nav-header">PAGES</li>
           <li class="nav-item">
-            <a href="/pages/home" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
+            <a href="/home" class="nav-link">
+              <i class="fas fa-home"></i>
               <p>Home</p>
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/pages/products" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+            <a href="/profile" class="nav-link">
+              <i class="far fa-user-circle"></i>
               <p>
-                PRODUCTS
+                Admin Profile
               </p>
             </a>
 
           </li>
           <li class="nav-item">
-            <a href="/pages/jade_family" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>JADE FAMILY</p>
+            <a href="/" class="nav-link">
+              <i class="fa fa-medkit"></i>
+              <p>Primary Examinations</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/pages/contact" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>CONTACT</p>
-            </a>
-          </li>
+          
 
           <li class="nav-header">Users</li>
           <li class="nav-item">
-            <a href="/adduser" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
-              <p>Add User</p>
+            <a href="/users" class="nav-link">
+              <i class="fas fa-users"></i>
+              <p>Manage Users</p>
             </a>
           </li>
 
-
-          <li class="nav-header">Products</li>
+         
           <li class="nav-item">
-            <a href="/products/listall" class="nav-link">
-             <i class="nav-icon fas fa-circle"></i>
+            <a href="/addUser" class="nav-link">
+              <i class="fas fa-user-plus"></i>
+              <p>Add user</p>
+            </a>
+          </li>
+
+
+          <li class="nav-header">Admins</li>
+          <li class="nav-item">
+            <a href="/admins" class="nav-link">
+             <i class="fas fa-users"></i>
               <p>
-                List All
+                Manage Admins
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/products/add" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+            <a href="/addAdmin" class="nav-link">
+              <i class="fas fa-user-plus"></i>
               <p>
-                Add Product
+                Add Admin
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="/products/addapp" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+         
+          <li class="nav-header">Others</li>
+         
+          <li class="nav-item">
+          <a href="/ " class="nav-link" >
+          <i class="fa fa-twitch"></i>
               <p>
-                Add Applicators
+                FeedBack
               </p>
-            </a>
+          
+          </a>
           </li>
 
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+           @csrf
+          </form>
+          <li class="nav-item">
+          <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+           {{ __('Logout') }}
+          </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+           @csrf
+          </form>
+           
+          </li>
 
         </ul>
       </nav>
@@ -375,56 +374,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="#">purisegypt</a>.</strong>
+    <strong>Copyright &copy; 2020-2021 <a href="#">Scan-Ray</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b></b>
