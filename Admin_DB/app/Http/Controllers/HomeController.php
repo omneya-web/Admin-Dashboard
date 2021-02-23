@@ -34,6 +34,7 @@ class HomeController extends Controller
 
         return view('Profile');
     }
+<<<<<<< Updated upstream
     public function feedback()
         {
 
@@ -61,3 +62,20 @@ class HomeController extends Controller
 
 >>>>>>> Stashed changes
 }
+=======
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+}
+>>>>>>> Stashed changes
