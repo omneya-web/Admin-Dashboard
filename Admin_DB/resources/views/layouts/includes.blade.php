@@ -98,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/profile" class="nav-link">
+            <a href="/adminprofile" class="nav-link">
               <i class="far fa-user-circle"></i>
               <p>
                 Admin Profile
@@ -107,9 +107,15 @@
 
           </li>
           <li class="nav-item">
-            <a href="/" class="nav-link">
+            <a href="/primary" class="nav-link">
               <i class="fa fa-medkit"></i>
               <p>Primary Examinations</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/places" class="nav-link">
+              <i class="fa fa-map-marker-alt"></i>
+              <p>Places</p>
             </a>
           </li>
           
@@ -152,7 +158,7 @@
           <li class="nav-header">Others</li>
          
           <li class="nav-item">
-          <a href="/ " class="nav-link" >
+          <a href="/feedback " class="nav-link" >
           <i class="fa fa-twitch"></i>
               <p>
                 FeedBack
@@ -374,14 +380,7 @@
 
 
 
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2020-2021 <a href="#">Scan-Ray</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b></b>
-    </div>
-  </footer>
+  
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

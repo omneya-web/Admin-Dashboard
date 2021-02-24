@@ -23,7 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'HomeController@profile');
+Route::get('/adminprofile', 'HomeController@profile');
+Route::get('/primary', 'HomeController@primary');
 Route::get('/users', 'HomeController@Users');
 
 
@@ -35,3 +36,7 @@ Route::get('/addAdmin', 'HomeController@addAdmin');
 Route::get('/userDetails', 'UserController@userDetails');
 Route::get('/medical', 'UserController@showMedical');
 Route::get('/adminDetails', 'AdminController@adminDetails');
+Route::get('/feedback', 'HomeController@feedback');
+Route::get('/places', 'HomeController@places');
+Route::get('/message', 'HomeController@message');
+Route::get('/reply', 'HomeController@reply');
