@@ -53,6 +53,35 @@ class HomeController extends Controller
 
         return view('addAdmin');
     }
+
+    public function primary()
+    {
+
+        return view('primary');
+    }
+    public function feedback()
+    {
+
+        return view('feedback');
+    }
+    public function places()
+    {
+
+        return view('places');
+    }
+    public function message()
+    {
+
+        return view('message');
+    }
+    public function reply()
+    {
+
+        return view('reply');
+    }
+
+
+
     
 
    
