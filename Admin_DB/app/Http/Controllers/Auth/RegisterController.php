@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Kreait\Firebase\Auth as FirebaseAuth;
+use Kreait\Firebase\Exception\FirebaseException;
 
 class RegisterController extends Controller
 {
@@ -30,17 +34,21 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+    /*
     public function __construct()
     {
         $this->middleware('guest');
     }
-
+      */
     /**
      * Get a validator for an incoming registration request.
      *
