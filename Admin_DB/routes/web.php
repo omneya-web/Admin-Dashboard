@@ -21,6 +21,9 @@ Route::group(['middleware', 'Admin'], function () {
     Route::get('/dashboard/showUser', 'userController@showUser');
     Route::post('/dashboard/editUser', 'userController@updateUser')->name('updateUser');
     Route::get('/deleteAdmin/{id}', 'AdminController@deleteAdmin');
+    Route::get('/getAdminDetails/{id}', 'AdminController@getAdminDetails');
+    Route::get('/adminprofile/{id}', 'AdminController@getAdminDetails');
+    Route::post('/updateAdmin/{id}', 'AdminController@updateAdminUser');
     Route::post('/addAdminUser', 'AdminController@addAdminUser')->name('addAdminUser');
     Route::get('/admins', 'AdminController@getAllAdmin');
     
@@ -29,9 +32,8 @@ Route::group(['middleware', 'Admin'], function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
-Route::get('/adminprofile', 'HomeController@profile');
 Route::get('/primary', 'HomeController@primary');
-Route::get('/users', 'userController@Users');
+Route::get('/users', 'AdminController@getAllUsers');
 
 
 
@@ -40,10 +42,21 @@ Route::get('/users', 'userController@Users');
 Route::get('/addUser', 'HomeController@addUser')->name('addUser');
 Route::get('/addAdmin', 'AdminController@addAdmin');
 Route::post('/addAdmin', 'AdminController@addAdminUser')->name('addAdmin');
-Route::get('/userDetails', 'userController@userDetails');
-Route::get('/medical', 'userController@showMedical');
-Route::get('/adminDetails', 'AdminController@adminDetails');
-Route::get('/feedback', 'HomeController@feedback');
-Route::get('/places', 'HomeController@places');
-Route::get('/message', 'HomeController@message');
-Route::get('/reply', 'HomeController@reply');
+//-----------------------------------USER--Routes-----------------------------//
+Route::get('/userDetails/{id}', 'AdminController@getUserDetails');
+Route::get('/deleteUser/{id}', 'AdminController@deleteUser');
+Route::get('/medical/{id}', 'AdminController@getUserMedicalRecord');
+Route::get('/userMedicalRecordDetails/{id}', 'AdminController@getUserMedicalRecordDetails');
+Route::get('/deleteUserMedicalRecord/{id}', 'AdminController@deleteUserMedicalRecord');
+//-----------------------------------places--Routes-----------------------------//
+Route::get('/places', 'AdminController@getAllPlaces')->name('places');
+Route::get('/deletePlace/{id}', 'AdminController@deletePlace');
+Route::get('/viewPlace/{id}', 'AdminController@getPlace');
+Route::post('/updatePlaces/{id}', 'AdminController@updatePlaces');
+Route::post('/addPlace', 'AdminController@addPlace');
+//-----------------------------------Feedback--Routes-----------------------------//
+Route::get('/feedback', 'AdminController@getAllFeedback');
+Route::get('/deleteFeedback/{id}', 'AdminController@deleteFeedback');
+Route::post('/replyonFeedback/{email}', 'AdminController@replyonFeedback');
+Route::get('/reply/{email}', 'AdminController@reply');
+Route::get('/message/{id}', 'AdminController@readFeedback');
