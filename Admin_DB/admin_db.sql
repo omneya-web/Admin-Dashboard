@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2021 at 09:09 PM
+-- Generation Time: Jun 08, 2021 at 12:57 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.9
 
@@ -51,6 +51,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `firebase_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -68,12 +69,15 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `Address`, `Phone`, `email_verified_at`, `password`, `type`, `isApproved`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Hussein', 'hossamhassan@gmail.com', 'haram-giza', '01111111111', NULL, '$2y$10$Bdz/MiTTTWobdkXun/3x7eUjcgd8TSvKvvAHqq0LD/2XT.t2FX/BK', 0, 1, NULL, NULL, NULL),
-(2, 'mai', 'maiqady@gmail.com', NULL, NULL, NULL, '$2y$10$OqgpSha9/nFcgAB/FuHbbuQdaQKSJ6hZDedLrukAKwWrSr66YiSTq', 0, 1, NULL, '2021-02-25 15:10:21', '2021-02-25 15:10:21'),
-(3, 'test4', 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-05-02 11:30:35', '2021-05-02 11:30:35'),
-(5, 'dummy', 'test2@test.com', NULL, NULL, NULL, 'dummy', 0, 1, NULL, '2021-05-20 16:58:35', '2021-05-20 16:58:35'),
-(8, 'test4', 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-05-20 17:08:49', '2021-05-20 17:08:49');
+INSERT INTO `users` (`id`, `firebase_id`, `name`, `email`, `Address`, `Phone`, `email_verified_at`, `password`, `type`, `isApproved`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, '', 'Hussein', 'hossamhassan@gmail.com', 'haram-giza', '01111111111', NULL, '$2y$10$Bdz/MiTTTWobdkXun/3x7eUjcgd8TSvKvvAHqq0LD/2XT.t2FX/BK', 0, 1, NULL, NULL, NULL),
+(2, '', 'mai', 'maiqady@gmail.com', NULL, NULL, NULL, '$2y$10$OqgpSha9/nFcgAB/FuHbbuQdaQKSJ6hZDedLrukAKwWrSr66YiSTq', 0, 1, NULL, '2021-02-25 15:10:21', '2021-02-25 15:10:21'),
+(5, '', 'dummy', 'test2@test.com', NULL, NULL, NULL, 'dummy', 0, 1, NULL, '2021-05-20 16:58:35', '2021-05-20 16:58:35'),
+(6, '', 'test4', 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-04 14:36:40', '2021-06-04 14:36:40'),
+(10, 'b85ab56958cb416f89da', 'test4', 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-06 14:47:49', '2021-06-06 14:47:49'),
+(11, 'b85ab56958cb416f89da', 'test4admin', 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-06 22:11:32', '2021-06-06 22:11:32'),
+(12, 'b85ab56958cb416f89da', 'test4admin', 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-07 08:41:41', '2021-06-07 08:41:41'),
+(13, 'b85ab56958cb416f89da', 'test4admin', 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-07 09:29:09', '2021-06-07 09:29:09');
 
 --
 -- Indexes for dumped tables
@@ -106,7 +110,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
