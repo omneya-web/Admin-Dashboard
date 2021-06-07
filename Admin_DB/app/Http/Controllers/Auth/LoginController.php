@@ -61,6 +61,7 @@ class LoginController extends Controller
                 if($document->data()['admin_password'] == $request->password)
                 {
                     $user = new User();
+                    $user->firebase_id = $document->id();
                     $user->name = $document->data()['admin_name'];
                     $user->email = $request->email;
                     $user->password = $request->password;
