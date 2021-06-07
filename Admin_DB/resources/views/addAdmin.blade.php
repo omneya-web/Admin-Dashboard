@@ -53,32 +53,15 @@
                     <label for="exampleInputEmail1">Date-Of-Birth</label>
                     <input name="dateofbirth" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter date-Of-Birth">
                   </div>
-                  <div class="form-group">
-                  <label>Gender</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                  </select>
-                </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail1">Gender </label>
+                    <input name="gender" type="text" class="form-control" id="exampleInputEmail1" placeholder="Male/Female">
+                  </div>
                   <div class="form-group row">
                     <label for="exampleInputPassword1">Password</label>
                     <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <div class="form-group row">
-                    <label for="exampleInputFile">Upload Image</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                      <form action="/action_page.php">
-                           <label for="img">Select image:</label>
-                               <input type="file" id="img" name="img" accept="image/*">
-                            
-                               
-                      </div>
-                      
-                    </div>
-                  </div>
-                  </form>
+                  
                   <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Add</button>
                 </div>

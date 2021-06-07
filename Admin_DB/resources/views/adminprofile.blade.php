@@ -13,27 +13,19 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Admin Profile</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
-
-
-
-  
-
-
-
     <!-- Main content -->
 <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-
+          @foreach($data as $admin)
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
@@ -49,14 +41,14 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Name</b> <a ></a>
+                  <input type="text" class="form-control" id="inputName" value= "{{$admin['name']}}">
                   </li>
                   <li class="list-group-item">
-                    <b>E-Mail</b> <a></a>
+                  <input type="email" class="form-control" id="inputEmail" value= "{{$admin['email']}}">
                   </li>
-                  <li class="list-group-item">
-                    <b>Gender</b> <a></a>
-                  </li>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$admin['adminId']}}">
+                                 Edit Profile
+                        </button>
                 </ul>
 
                 
@@ -64,7 +56,78 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+            <!------------------------------------------------------------------------>
+            <div class="modal fade" id="exampleModal{{$admin['adminId']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                           <form method="post" action="/updateAdmin/{{$admin['adminId']}}">
+                                @csrf
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-md-8 offset-md-2 mt-4">
+                                      <!-- hidden -->
+                                      <input type="hidden" value="{{$admin['name']}}" name="refEmail">
+                                      <input type="hidden" value="{{$admin['email']}}" name="refType">
 
+
+                                       <!-- Name -->
+                                      <div class="form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" id="inputName" name="name" value="{{$admin['name']}}">
+                                      </div>
+                                      <!-- End of Name -->
+                                      <!-- EMail, Password -->
+                                      <div class="form-row">
+                                      
+                                        <div class="form-group col-md-6">
+                                          <label for="inputPassword4">Password</label>
+                                          <input type="password" class="form-control" id="inputPassword4" name="password" value="{{$admin['password']}}">
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="inputName">Gender</label>
+                                        <input type="text" class="form-control" id="inputName" name="gender" value="{{$admin['gender']}}">
+                                      </div>
+                                      <!-- End EMail password -->
+                                       <!-- Address -->
+                                      <div class="form-group">
+                                        <label for="inputAddress">Date of Birth</label>
+                                        <input type="text" class="form-control" id="inputAddress" name="dateofbirth" value="{{$admin['birthDate']}}"> 
+                                      </div>
+                                      <!-- End of Name -->
+                                      
+                                       <!-- mobile , type -->
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="inputPhone4">Phone</label>
+                                          <input type="Phone" class="form-control" id="inputPhone4" name="phone" value="{{$admin['phone']}}">
+                                        </div>
+                                       
+                                      </div>
+                                      <!-- End mobile type -->
+                                      <!-- IS approved -->
+                                      <!-- End of approve -->
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                  </div>
+                                </div>
+                               </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!------------------------------------------------------------------------>
             <!-- About Me Box -->
             <div class="card card-primary">
               
@@ -78,140 +141,32 @@
               <div class="card-header p-2">
                 <ul class="nav nav-pills"></ul>
                    <div class="card-body">
-                  
                     <form class="form-horizontal">
-                      <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="inputName" placeholder="Name"></input>
-                         
-                        </div>
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-7">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email"></input>
-                        </div>
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
-                      </div>
                       <div class="form-group row">
                         <label for="inputaddress" class="col-sm-2 col-form-label">Address</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="inputaddress" placeholder="Address"></input>
+                          <input type="text" class="form-control" id="inputaddress" value= "{{$admin['name']}}">
                         </div>
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
                       </div>
                       <div class="form-group row">
                         <label for="inputphonenumber" class="col-sm-2 col-form-label">Phone Number</label>
                         <div class="col-sm-7">
-                          <input class="form-control" id="inputphonenumber" placeholder="Phone number"></input>
+                          <input class="form-control" id="inputphonenumber" value= "{{$admin['phone']}}">
                         </div>
-
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
                       </div>
                       <div class="form-group row">
                         <label for="inputdateofbirth" class="col-sm-2 col-form-label">Date of Birth</label>
                         <div class="col-sm-7">
-                          <input class="form-control" id="inputdateofbirth" placeholder="DD/MM/YYYY"></input>
+                          <input class="form-control" id="inputdateofbirth" value= "{{$admin['birthDate']}}">
                         </div>
-
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
                       </div>
                       <div class="form-group row">
-                        <label for="inputgender" class="col-sm-2 col-form-label">Gender</label>
-                        <div class="form-group">
-                  <select class="form-control select2" style="width: 98%;">
-                    <option selected="selected">Gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                    
-                  </select>
-                </div>
-
-                        <a class="btn btn-primary btn-sm-1" href="#" style="height:0%">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputlastlogin" class="col-sm-2 col-form-label">Last Login</label>
+                        <label for="inputphonenumber" class="col-sm-2 col-form-label">Gender</label>
                         <div class="col-sm-7">
-                          <input class="form-control" id="inputlastlogin" placeholder="DD/MM/YYYY/  HH:MM:SS"></input>
-                        </div>
-
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputoldpassword" class="col-sm-2 col-form-label">Old Password</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="inputoldpassword" placeholder="Old Password"></input>
-                        </div>
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputconfirmpassword" class="col-sm-2 col-form-label">Confirm Password</label>
-                        <div class="col-sm-7">
-                          <input type="text" class="form-control" id="inputconfirmpassword" placeholder="Confirm Password"></input>
-                        </div>
-                        <a class="btn btn-primary btn-sm-1" href="#">
-                              <i class="fas fa-edit">
-                              </i>
-                              Edit
-                          </a>
-                        </div>
-                        <div class="form-group row">
-                        <label for="inputPhoto" class="col-sm-2 col-form-label"style="height:10%S"> Upload Image</label>
-
-                        <div class="form-group row">
-                    <div class="input-group">
-                      <div class="custom-file">
-                      <form action="/action_page.php">
-                          
-                               <input type="file" id="img" name="img" accept="image/*"></input>
-   
-                      </div>
-                      
-                    </div>
-                  </div>
-                        
-                        </div>
-                     
-                      <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-danger">Submit</button>
+                          <input class="form-control" id="inputphonenumber" value = "{{$admin['gender']}}">
                         </div>
                       </div>
-                    </form>
+                    @endforeach
                   </div>
                   <!-- /.tab-pane -->
                 </div>

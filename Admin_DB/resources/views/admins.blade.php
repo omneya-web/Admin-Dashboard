@@ -42,26 +42,20 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Admin_Name </th>
-                  <th>Admin_Email</th>
-                  
-                  <th>Last_Login</th>
+                  <th>Name </th>
+                  <th>Email</th> 
+                  <th>Phone</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                
-                  <tr class="table-active">
-
-                    
                 <tr>
                   
                 @foreach($data as $admin)
                     <td>{{$admin['name']}}</td>
                     <td>{{$admin['email']}}</td>
-                  <td></td>
-                  
-                  <td>                          <a class="btn btn-primary btn-sm" href="/adminDetails#">
+                    <td>{{$admin['phone']}}</td>
+                  <td>        <a class="btn btn-primary btn-sm" href="/getAdminDetails/{{$admin['id']}}">
                               <i class="fas fa-folder">
                               </i>
                               View
@@ -104,6 +98,30 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
+  });
+</script>
 </body>
 </html>
 @endsection

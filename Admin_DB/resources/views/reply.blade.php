@@ -25,19 +25,19 @@
           <div class="card" style="height:90%">
             <div class="card-header">
             </div>
-            
+            <!--------------------------------------------------------------------------------------->
+              <form method="post" action="/replyonFeedback/{{$email}}">
+              @csrf
+                <div class="card-body" >
+                  <div class="form-group row">
+                    <input name="user_feedback_response" type="text" class="form-control form-rounded" rows="9" cols="50" value ="Enter your reply here">
+                  </div>
+                  <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm-1">Send</button>
+                </div>
+              </form>
             <!-- /.card-header -->
-            <div class="card-body" align="center">
-                
-            <textarea class=" form-control form-rounded" name="message" rows="9" cols="50"></textarea>
             
-              <a class="btn btn-primary btn-sm-1" href="#" >
-
-                              <i class="fas fa-envelope" >
-                              </i>
-                              Send
-                          </a>
-            </div>
 
  
 

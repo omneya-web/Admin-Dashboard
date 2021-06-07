@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Admin Details</h1>
+            <h1>Record Details</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -41,19 +41,14 @@
             <div class="col-md-6">
               <div class="form-group row">
               <li></li>
-              @foreach($data as $admin)
-                    <label for="exampleInputEmail1">FullName </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= {{$admin['name']}} >
+              @foreach($data as $record)
+                    <label for="inputphonenumber">Ray Name </label>
+                    <input type="text" class="form-control" id="inputphonenumber" value= {{$record['rayName']}}>
                   </div>
                   <div class="form-group row">
                   <li></li>
-                    <label for="exampleInputEmail1">Email </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" value= {{$admin['email']}} >
-                  </div>
-                  <div class="form-group row">
-                  <li></li>
-                    <label for="exampleInputEmail1">Address </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= {{$admin['name']}} >
+                    <label for="inputphonenumber">Ray Date </label>
+                    <input type="text" class="form-control" id="inputphonenumber" value= {{$record['rayDate']}}>
                   </div>
                   
              </div>
@@ -61,33 +56,26 @@
         <div class="col-md-6">
               
                 <div class="form-group row">
-                     <li></li>
-                    <label for="exampleInputEmail1">Phone Number </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= {{$admin['phone']}} >
-                  </div>
-                 
+                <li></li>
+                    <label for="inputphonenumber">Report Translation </label>
+                    <input type="text" class="form-control" id="inputphonenumber" value= {{$record['reportTranslation']}}>
+                  </div>  
                   <div class="form-group row">
                   <li></li>
-                  <label for="exampleInputEmail1">Date-Of-Birth</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= {{$admin['birthDate']}} >
-                            
-                         </div>
-            
-                  <div class="form-group row">
-                     <li></li>
-                    <label for="exampleInputEmail1">Gender</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= {{$admin['gender']}} >
-                  </div>
-                  @endforeach     
+                    <label for="inputphonenumber">Report Date </label>
+                    <input type="text" class="form-control" id="inputphonenumber" value= {{$record['reportDate']}}>
+                  </div> 
                 </div> 
                 <!-- /.form-group -->
-                
+                @endforeach
               </div>
               <!-- /.col -->
             </div>
             <!-- /.row -->
-            
-       </div>
+      
+                      </div>
+                    </div>
+                  </div>
        </section>
             
 @endsection

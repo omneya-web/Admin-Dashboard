@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Message</h1>
+            <h1>User Feedback</h1>
           </div>
          
         </div>
@@ -28,15 +28,16 @@
             
             <!-- /.card-header -->
             <div class="card-body" align="center">
-                
-            <textarea class=" form-control form-rounded" name="message" rows="9" cols="50"></textarea>
+            @foreach($data as $feedback)
+            <textarea class=" form-control form-rounded" name="message" rows="9" cols="50">{{$feedback['feedback']}}</textarea>
             
-              <a class="btn btn-primary btn-sm-1" href="/reply" >
+              <a class="btn btn-primary btn-sm-1" href="/reply/{{$feedback['email']}}" >
 
                               <i class="fas fa-reply" >
                               </i>
                               Reply
                           </a>
+                          @endforeach
             </div>
 
  

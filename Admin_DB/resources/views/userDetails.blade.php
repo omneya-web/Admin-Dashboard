@@ -15,7 +15,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Details</li>
             </ol>
           </div>
@@ -41,28 +41,25 @@
             <div class="col-md-6">
               <div class="form-group row">
               <li></li>
+              @foreach($data as $user)
                     <label for="exampleInputEmail1">FullName </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['name']}}">
                   </div>
                   <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Email </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" value= "{{$user['email']}}">
                   </div>
                   <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Address </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter address">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['address']}}">
                   </div>
-                <div class="form-group">
-                <li>  <label>Gender</label></li>
-                
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                  </select>
-                </div>
+                  <div class="form-group row">
+                  <li></li>
+                    <label for="exampleInputEmail1">Gender </label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['gender']}}">
+                  </div>
              </div>
               <!-- /.col -->
         <div class="col-md-6">
@@ -70,38 +67,30 @@
                 <div class="form-group row">
                 <li></li>
                     <label for="exampleInputEmail1">Phone Number </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter phoneNumber">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['phone']}}">
                   </div>
                  
                   <div class="form-group row">
                   <li></li>
                   <label for="exampleInputEmail1">Date-Of-Birth</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="DD/MM/YYYY">
+                  <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['birthDate']}}">
                             
                          </div>
 
                          <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Register_Date </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-                  </div>
-
-
-                  <div class="form-group row">
-                  <li></li>
-                    <label for="exampleInputEmail1">Last_Login </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-                  </div>
-                         
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['registerDate']}}">
+                  </div>    
                 </div> 
                 <!-- /.form-group -->
-                
+                @endforeach
               </div>
               <!-- /.col -->
             </div>
             <!-- /.row -->
             <div class="card-footer">
-                <a class="btn btn-primary " href="/medical">
+                <a class="btn btn-primary " href="/medical/{{$user['id']}}">
                               Medical Record
                           </a>
                 </div>

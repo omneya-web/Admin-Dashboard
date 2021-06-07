@@ -13,7 +13,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Feedback</li>
             </ol>
           </div>
@@ -44,186 +44,25 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                @foreach($data as $feedback)
+                    <td>{{$feedback['email']}}</td>
+                    <td>{{$feedback['subject']}}</td>
+                    <td>{{$feedback['date']}}</td>
                   <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
+                       <a class="btn btn-primary btn-sm" href="/message/{{$feedback['id']}}">
                               <i class="fas fa-folder">
                               </i>
                               Read
                           </a>
                           
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="/deleteFeedback/{{$feedback['id']}}">
                               <i class="fas fa-trash">
                               </i>
                               Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
                           </a>
-                      
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
+                          </td>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                 <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                       
-                          
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                         
-                          
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                         
-                         
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                          
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                         
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                 
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                          
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                              Read
-                          </a>
-                
-                          
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                  <td>        
-                       <a class="btn btn-primary btn-sm" href="/message">
-                              <i class="fas fa-folder">
-                              </i>
-                            Read
-                          </a>
-                         
-                         
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
+                @endforeach
                 </tbody>
                 
               </table>

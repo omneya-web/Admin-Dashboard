@@ -87,7 +87,7 @@ use App\admin;
           <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/adminprofile" class="d-block">{{Auth::User()->name}}</a>
+          <a href="/adminprofile/{{Auth::User()->firebase_id}}" class="d-block">{{Auth::User()->name}}</a>
         </div>
       </div>
 
@@ -105,19 +105,13 @@ use App\admin;
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/adminprofile" class="nav-link">
+            <a href="/adminprofile/{{Auth::User()->firebase_id}}" class="nav-link">
               <i class="far fa-user-circle"></i>
               <p>
-                Admin Profile
+                Profile
               </p>
             </a>
 
-          </li>
-          <li class="nav-item">
-            <a href="/primary" class="nav-link">
-              <i class="fa fa-medkit"></i>
-              <p>Primary Examinations</p>
-            </a>
           </li>
           <li class="nav-item">
             <a href="/places" class="nav-link">
@@ -134,16 +128,6 @@ use App\admin;
               <p>Manage Users</p>
             </a>
           </li>
-
-         
-          <li class="nav-item">
-            <a href="/addUser" class="nav-link">
-              <i class="fas fa-user-plus"></i>
-              <p>Add user</p>
-            </a>
-          </li>
-
-
           <li class="nav-header">Admins</li>
           <li class="nav-item">
             <a href="/admins" class="nav-link">
