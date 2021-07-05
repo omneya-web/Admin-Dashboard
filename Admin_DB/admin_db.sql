@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 12:57 AM
+-- Generation Time: Jul 05, 2021 at 05:34 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.9
 
@@ -53,6 +53,7 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firebase_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -69,15 +70,28 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firebase_id`, `name`, `email`, `Address`, `Phone`, `email_verified_at`, `password`, `type`, `isApproved`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, '', 'Hussein', 'hossamhassan@gmail.com', 'haram-giza', '01111111111', NULL, '$2y$10$Bdz/MiTTTWobdkXun/3x7eUjcgd8TSvKvvAHqq0LD/2XT.t2FX/BK', 0, 1, NULL, NULL, NULL),
-(2, '', 'mai', 'maiqady@gmail.com', NULL, NULL, NULL, '$2y$10$OqgpSha9/nFcgAB/FuHbbuQdaQKSJ6hZDedLrukAKwWrSr66YiSTq', 0, 1, NULL, '2021-02-25 15:10:21', '2021-02-25 15:10:21'),
-(5, '', 'dummy', 'test2@test.com', NULL, NULL, NULL, 'dummy', 0, 1, NULL, '2021-05-20 16:58:35', '2021-05-20 16:58:35'),
-(6, '', 'test4', 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-04 14:36:40', '2021-06-04 14:36:40'),
-(10, 'b85ab56958cb416f89da', 'test4', 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-06 14:47:49', '2021-06-06 14:47:49'),
-(11, 'b85ab56958cb416f89da', 'test4admin', 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-06 22:11:32', '2021-06-06 22:11:32'),
-(12, 'b85ab56958cb416f89da', 'test4admin', 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-07 08:41:41', '2021-06-07 08:41:41'),
-(13, 'b85ab56958cb416f89da', 'test4admin', 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-07 09:29:09', '2021-06-07 09:29:09');
+INSERT INTO `users` (`id`, `firebase_id`, `name`, `image`, `email`, `Address`, `Phone`, `email_verified_at`, `password`, `type`, `isApproved`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, '', 'Hussein', NULL, 'hossamhassan@gmail.com', 'haram-giza', '01111111111', NULL, '$2y$10$Bdz/MiTTTWobdkXun/3x7eUjcgd8TSvKvvAHqq0LD/2XT.t2FX/BK', 0, 1, NULL, NULL, NULL),
+(2, '', 'mai', NULL, 'maiqady@gmail.com', NULL, NULL, NULL, '$2y$10$OqgpSha9/nFcgAB/FuHbbuQdaQKSJ6hZDedLrukAKwWrSr66YiSTq', 0, 1, NULL, '2021-02-25 15:10:21', '2021-02-25 15:10:21'),
+(5, '', 'dummy', NULL, 'test2@test.com', NULL, NULL, NULL, 'dummy', 0, 1, NULL, '2021-05-20 16:58:35', '2021-05-20 16:58:35'),
+(6, '', 'test4', NULL, 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-04 14:36:40', '2021-06-04 14:36:40'),
+(10, 'b85ab56958cb416f89da', 'test4', NULL, 'test4@test.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-06 14:47:49', '2021-06-06 14:47:49'),
+(11, 'b85ab56958cb416f89da', 'test4admin', NULL, 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-06 22:11:32', '2021-06-06 22:11:32'),
+(12, 'b85ab56958cb416f89da', 'test4admin', NULL, 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-07 08:41:41', '2021-06-07 08:41:41'),
+(13, 'b85ab56958cb416f89da', 'test4admin', NULL, 'test4@test.com', NULL, NULL, NULL, '123456', 0, 1, NULL, '2021-06-07 09:29:09', '2021-06-07 09:29:09'),
+(14, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-06-11 15:36:39', '2021-06-11 15:36:39'),
+(15, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-01 12:46:24', '2021-07-01 12:46:24'),
+(16, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-02 21:29:32', '2021-07-02 21:29:32'),
+(17, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-02 22:45:32', '2021-07-02 22:45:32'),
+(18, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-02 22:56:04', '2021-07-02 22:56:04'),
+(19, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-02 22:57:52', '2021-07-02 22:57:52'),
+(20, '4c447ce03fc644919d52', 'qwe', NULL, 'test4@test.com', NULL, NULL, NULL, '123', 0, 1, NULL, '2021-07-02 22:58:28', '2021-07-02 22:58:28'),
+(21, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-03 10:29:09', '2021-07-03 10:29:09'),
+(22, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-03 14:41:30', '2021-07-03 14:41:30'),
+(23, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-04 17:16:54', '2021-07-04 17:16:54'),
+(24, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-05 08:31:45', '2021-07-05 08:31:45'),
+(25, '7bf423704dfd442ca445', 'omneya', NULL, 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-05 11:06:39', '2021-07-05 11:06:39'),
+(26, '7bf423704dfd442ca445', 'omneya', '7bf423704dfd442ca445.jpg', 'omneya@gmail.com', NULL, NULL, NULL, '123456789', 0, 1, NULL, '2021-07-05 11:15:10', '2021-07-05 11:15:10');
 
 --
 -- Indexes for dumped tables
@@ -110,7 +124,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
