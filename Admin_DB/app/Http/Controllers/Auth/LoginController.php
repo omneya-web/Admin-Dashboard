@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Database;
@@ -63,11 +64,15 @@ class LoginController extends Controller
                     $user = new User();
                     $user->firebase_id = $document->id();
                     $user->name = $document->data()['admin_name'];
+                    $user->image = $document->data()['admin_img'];
                     $user->email = $request->email;
                     $user->password = $request->password;
                     $user->save();
                     Auth::login($user);
-                    
+                    $user->last_login = Carbon::now()->toDateTimeString();
+                    app('firebase.firestore')->database()->collection('Admin')->document($user->firebase_id)->update([
+                        ['path' => 'last_login','value' =>  $user->last_login], 
+                    ]);
                         return redirect()->route('home');
                     
                 }
