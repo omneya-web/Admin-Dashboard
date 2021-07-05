@@ -22,7 +22,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
+    @foreach($data as $user)
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -31,9 +31,10 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="../../dist/img/user4-128x128.jpg"
+                       src="{{$user['image']}}"
                        alt="User profile picture">
                 </div>
+                <span id='message'></span>
                 </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -41,24 +42,23 @@
             <div class="col-md-6">
               <div class="form-group row">
               <li></li>
-              @foreach($data as $user)
                     <label for="exampleInputEmail1">FullName </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['name']}}">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['name']}}" readonly>
                   </div>
                   <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Email </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" value= "{{$user['email']}}">
+                    <input type="email" class="form-control" id="exampleInputEmail1" value= "{{$user['email']}}" readonly>
                   </div>
                   <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Address </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['address']}}">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['address']}}" readonly>
                   </div>
                   <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Gender </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['gender']}}">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['gender']}}" readonly>
                   </div>
              </div>
               <!-- /.col -->
@@ -67,34 +67,53 @@
                 <div class="form-group row">
                 <li></li>
                     <label for="exampleInputEmail1">Phone Number </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['phone']}}">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['phone']}}" readonly>
                   </div>
                  
                   <div class="form-group row">
                   <li></li>
                   <label for="exampleInputEmail1">Date-Of-Birth</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['birthDate']}}">
+                  <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['birthDate']}}" readonly>
                             
                          </div>
 
                          <div class="form-group row">
                   <li></li>
                     <label for="exampleInputEmail1">Register_Date </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['registerDate']}}">
-                  </div>    
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['registerDate']}}" readonly>
+                  </div>
+                  <div class="form-group row">
+                  <li></li>
+                    <label for="exampleInputEmail1">Last Login </label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" value= "{{$user['lastLogin']}}" readonly>
+                  </div>     
                 </div> 
                 <!-- /.form-group -->
-                @endforeach
               </div>
               <!-- /.col -->
+              <div class="card-footer">
+              <input type="hidden" name="status" class="form-control" id="status" value= "{{$user['isEnabled']}}" >
+                        <a id="btnid"class="btn btn-primary btn-sm" href="/disableEnableUser/{{$user['id']}}"><i class = "fas fa"></i>Enable</a>
+                        </div>
             </div>
             <!-- /.row -->
-            <div class="card-footer">
-                <a class="btn btn-primary " href="/medical/{{$user['id']}}">
-                              Medical Record
-                          </a>
-                </div>
+            
        </div>
        </section>
-            
+       @endforeach
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+            $( function () 
+            {
+            if ($('#status').val() == 1) 
+            {
+            $('#message').html('User is Enabled').css('color', 'green');
+            $('#btnid').text('Disable');
+            } else 
+            {
+              $('#message').html('User is Disabled').css('color', 'red');
+              $('#btnid').text('Enable');
+            }
+              });
+            </script>      
 @endsection

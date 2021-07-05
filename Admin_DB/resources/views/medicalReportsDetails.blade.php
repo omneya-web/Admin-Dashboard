@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Record Details</h1>
+            <h1>Report Details</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -42,33 +42,17 @@
               <div class="form-group row">
               <li></li>
               @foreach($data as $record)
-                    <label for="inputphonenumber">Ray Name </label>
-                    <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['rayName']}}">
-                  </div>
-                  <div class="form-group row">
-                  <li></li>
-                    <label for="inputphonenumber">Ray Result </label>
-                    <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['rayResult']}}">
-                  </div>
-                  <div class="form-group row">
-                  <li></li>
-                    <label for="inputphonenumber">Ray Date </label>
-                    <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['rayDate']}}">
-                  </div>    
-             </div>
-              <!-- /.col -->
-        <div class="col-md-6">
-              
-                <div class="form-group row">
-                <li></li>
                     <label for="inputphonenumber">Report Translation </label>
                     <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['reportTranslation']}}">
-                  </div>  
+                  </div>
                   <div class="form-group row">
                   <li></li>
                     <label for="inputphonenumber">Report Date </label>
                     <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['reportDate']}}">
-                  </div> 
+                  </div>
+             </div>
+              <!-- /.col -->
+        <div class="col-md-6"> 
                 </div> 
                 <!-- /.form-group -->
                 @endforeach

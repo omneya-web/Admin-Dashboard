@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manage Users</h1>
+            <h1>Manage Admins</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Manage Users</li>
+              <li class="breadcrumb-item active">Manage Admins</li>
             </ol>
           </div>
         </div>
@@ -35,56 +35,17 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Users Data</h3>
+              <h3 class="card-title">Admins Data</h3>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Name </th>
-                  <th>Email</th> 
-                  <th>Rays</th>
-                  <th>Reports</th>
-                  <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                
-                  
-
-                    
-                <tr>
-                  
-                @foreach($data as $user)
-                    <td>{{$user['name']}}</td>
-                    <td>{{$user['email']}}</td>
-                    <td><a class="btn-sm" href="/medicalRays/{{$user['id']}}/1">{{$user['user_no_rays']}}</a></td>
-                    <td><a class="btn-sm" href="/medicalReports/{{$user['id']}}/2">{{$user['user_no_reports']}}</a></td>
-                  
-                  <td>        <a class="btn btn-primary btn-sm" href="/userDetails/{{$user['id']}}">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                         
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="/deleteUser/{{$user['id']}}">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a></td>
-                </tr>
-                @endforeach
-               
-                </tbody>
-                <tfoot>
-                <tr>
-                  
-                </tr>
-                </tfoot>
-              </table>
+            <div class="card-body" align="center">
+        
+            
+            <li class="form-control form-rounded">Admins Not Found</li>
+            
+              
             </div>
+
             <!-- /.card-body -->
           </div>
           <!-- /.card -->

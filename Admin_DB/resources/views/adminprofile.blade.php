@@ -31,7 +31,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="/dist/img/user2-160x160.jpg"
+                       src="/firebase-temp-uploads/{{$admin['admin_img']}}"
                        alt="User profile picture">
                 </div>
 
@@ -41,10 +41,10 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                  <input type="text" class="form-control" id="inputName" value= "{{$admin['name']}}">
+                  <input type="text" class="form-control" id="inputName" value= "{{$admin['name']}}" readonly>
                   </li>
                   <li class="list-group-item">
-                  <input type="email" class="form-control" id="inputEmail" value= "{{$admin['email']}}">
+                  <input type="email" class="form-control" id="inputEmail" value= "{{$admin['email']}}" readonly>
                   </li>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$admin['adminId']}}">
                                  Edit Profile
@@ -67,7 +67,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                           <form method="post" action="/updateAdmin/{{$admin['adminId']}}">
+                           <form method="post" action="/updateAdmin/{{$admin['adminId']}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="container">
                                   <div class="row">
@@ -108,14 +108,22 @@
                                       <div class="form-row">
                                         <div class="form-group col-md-6">
                                           <label for="inputPhone4">Phone</label>
-                                          <input type="Phone" class="form-control" id="inputPhone4" name="phone" value="{{$admin['phone']}}">
+                                          <input name="phone" type="tel" class="form-control" id="exampleInputEmail1"  pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{3}" required value="{{$admin['phone']}}">
+                                        </div>
+                                        <div class="form-group row">
+                                          <div class="form-group col-md-6">
+                                              <div class="custom-file">
+                                                <label for="img">Select image:</label>
+                                                <input type="file" id="img" name="img">
+                                              </div>
+                                           </div>
                                         </div>
                                        
                                       </div>
                                       <!-- End mobile type -->
                                       <!-- IS approved -->
                                       <!-- End of approve -->
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <button type="submit" class="btn btn-primary" value="Upload Image">Update</button>
                                     </div>
                                   </div>
                                 </div>
@@ -145,25 +153,25 @@
                       <div class="form-group row">
                         <label for="inputaddress" class="col-sm-2 col-form-label">Address</label>
                         <div class="col-sm-7">
-                          <input type="text" class="form-control" id="inputaddress" value= "{{$admin['name']}}">
+                          <input type="text" class="form-control" id="inputaddress" value= "{{$admin['name']}}" readonly>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputphonenumber" class="col-sm-2 col-form-label">Phone Number</label>
                         <div class="col-sm-7">
-                          <input class="form-control" id="inputphonenumber" value= "{{$admin['phone']}}">
+                          <input class="form-control" id="inputphonenumber" value= "{{$admin['phone']}}" readonly>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputdateofbirth" class="col-sm-2 col-form-label">Date of Birth</label>
                         <div class="col-sm-7">
-                          <input class="form-control" id="inputdateofbirth" value= "{{$admin['birthDate']}}">
+                          <input class="form-control" id="inputdateofbirth" value= "{{$admin['birthDate']}}" readonly>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputphonenumber" class="col-sm-2 col-form-label">Gender</label>
                         <div class="col-sm-7">
-                          <input class="form-control" id="inputphonenumber" value = "{{$admin['gender']}}">
+                          <input class="form-control" id="inputphonenumber" value = "{{$admin['gender']}}" readonly>
                         </div>
                       </div>
                     @endforeach

@@ -45,7 +45,7 @@ use App\admin;
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+      <a class="nav-link" onclick = "goBack()"><i class = "fas fa-arrow-circle-left"></i></a>
       </li>
 
     </ul>
@@ -73,7 +73,7 @@ use App\admin;
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/home" class="brand-link">
       <img src="/dist/img/logo-puris.png" alt="Scan_Ray" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Admin</span>
@@ -84,7 +84,7 @@ use App\admin;
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/firebase-temp-uploads/{{Auth::User()->image}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="/adminprofile/{{Auth::User()->firebase_id}}" class="d-block">{{Auth::User()->name}}</a>
@@ -137,15 +137,6 @@ use App\admin;
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/addAdmin" class="nav-link">
-              <i class="fas fa-user-plus"></i>
-              <p>
-                Add Admin
-              </p>
-            </a>
-          </li>
-         
           <li class="nav-header">Others</li>
          
           <li class="nav-item">
@@ -233,9 +224,12 @@ use App\admin;
 
 <script src="/pluginsy/datatables/jquery.dataTables.js"></script>
 <script src="/pluginsy/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-
-
-
+<script>
+function goBack()
+{
+  window.history.back();
+}
+</script>
 <script>
   $(function () {
     $("#example1").DataTable();

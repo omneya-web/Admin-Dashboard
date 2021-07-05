@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Record Details</h1>
+            <h1>Ray Details</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -57,18 +57,7 @@
                   </div>    
              </div>
               <!-- /.col -->
-        <div class="col-md-6">
-              
-                <div class="form-group row">
-                <li></li>
-                    <label for="inputphonenumber">Report Translation </label>
-                    <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['reportTranslation']}}">
-                  </div>  
-                  <div class="form-group row">
-                  <li></li>
-                    <label for="inputphonenumber">Report Date </label>
-                    <input type="text" class="form-control" id="inputphonenumber" value= "{{$record['reportDate']}}">
-                  </div> 
+        <div class="col-md-6"> 
                 </div> 
                 <!-- /.form-group -->
                 @endforeach

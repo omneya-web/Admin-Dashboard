@@ -39,29 +39,40 @@
                 <div class="card-body" >
                   <div class="form-group row">
                     <label for="exampleInputEmail1">FullName </label>
-                    <input name="fullname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+                    <input name="fullname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" required>
                   </div>
                   <div class="form-group row">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
                   </div>
                   <div class="form-group row">
                     <label for="exampleInputEmail1">Mobile Number</label>
-                    <input name="phone" type="phone" class="form-control" id="exampleInputEmail1" placeholder="Enter phone Number">
+                    <input name="phone" type="tel" class="form-control" id="exampleInputEmail1" placeholder="012-34-567-890" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{3}" required>
                   </div>
                   <div class="form-group row">
                     <label for="exampleInputEmail1">Date-Of-Birth</label>
-                    <input name="dateofbirth" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter date-Of-Birth">
+                    <input name="dateofbirth" type="date" class="form-control" id="exampleInputEmail1" placeholder="Enter date-Of-Birth" required>
                   </div>
                   <div class="form-group row">
                     <label for="exampleInputEmail1">Gender </label>
-                    <input name="gender" type="text" class="form-control" id="exampleInputEmail1" placeholder="Male/Female">
+                    <input name="gender" list="gender" class="form-control" id="exampleInputEmail1" required>
+                    <datalist id="gender">
+                    <option value="Male">
+                    <option value="Female">
+                    </datalist>
                   </div>
                   <div class="form-group row">
                     <label for="exampleInputPassword1">Password</label>
-                    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
                   </div>
+                  <div class="form-group row">
+                    <label for="exampleInputPassword1">Confirm Password</label>
+                    <input name="confirm_password" type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
+                    <span id='message'></span>
+                  </div>
+                  <!-- JavaScript -->
                   
+                    <!-- JavaScript---End-->
                   <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Add</button>
                 </div>
@@ -71,7 +82,18 @@
               
               
             </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+            $('#password, #confirm_password').on('keyup', function () {
+            if ($('#password').val() == $('#confirm_password').val()) {
+            $('#message').html('Matching').css('color', 'green');
+            } else 
+            $('#message').html('Not Matching').css('color', 'red');
+              });
+            </script>
             </body>
             <!-- /.card -->
 
+
+</html>
 @endsection
