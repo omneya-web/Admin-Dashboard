@@ -21,7 +21,6 @@
     </section>
 
     <!-- /.content-header -->
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -31,7 +30,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$users_cnt}}</h3>
 
                 <p>Users</p>
               </div>
@@ -46,7 +45,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px"></sup></h3>
+                <h3>{{$users_cnt}}<sup style="font-size: 20px"></sup></h3>
 
                 <p>User Registrations</p>
               </div>
@@ -61,7 +60,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>5</h3>
+                <h3>{{$admins_cnt}}</h3>
 
                 <p>Admins</p>
               </div>
@@ -76,7 +75,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{$users_cnt}}</h3>
 
                 <p> Visitors</p>
               </div>
@@ -180,8 +179,6 @@
               </div>
             </div>
             <!-- /.card -->
-
-            
           </div>
           <!-- /.col-md-6 -->
         </div>
