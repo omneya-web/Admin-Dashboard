@@ -1,7 +1,26 @@
 @extends('layouts.includes')
 
 @section('content')
-
+<style>
+.sliderfortestandbest{
+  height: 400px;
+  width: 750px;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.4);
+}
+.sliderfortestandbest .imagesofsliderfortestandbest{
+  height: 100%;
+  width: 100%;
+}
+.imagesofsliderfortestandbest .imgofslider{
+  height: 100%;
+  width: 100%;
+}
+.imagesofsliderfortestandbest .imgofslider2{
+  height: 100%;
+  width: 100%;
+}
+</style>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -92,7 +111,7 @@
         
     
 
-      
+
         <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -100,43 +119,25 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title"> Visitors</h3>
-                  <a href="javascript:void(0);">View users</a>
+                  <h3 class="card-title"> Admins</h3>
+                  <a href="/admins">View admins</a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">100</span>
-                    <span>Visitors Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 12.5%
-                    </span>
-                    <span class="text-muted">Since last week</span>
-                  </p>
+                <div class="sliderfortestandbest">
+                    <div class="imagesofsliderfortestandbest">
+                      <img class="imgofslider" src="/dist/img/manager1.jpeg">
+                      <img class="imgofslider" src="/dist/img/manager2.jpg">
+                      <img class="imgofslider" src="/dist/img/manager3.png">
+                      <img class="imgofslider" src="/dist/img/manager4.jpg">
+                      </div>
+                  </div>
                 </div>
                 <!-- /.d-flex -->
-
-                <div class="position-relative mb-4">
-                  <canvas id="visitors-chart" height="200"></canvas>
-                </div>
-
-                <div class="d-flex flex-row justify-content-end">
-                  <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> This Week
-                  </span>
-
-                  <span>
-                    <i class="fas fa-square text-gray"></i> Last Week
-                  </span>
-                </div>
               </div>
             </div>
             <!-- /.card -->
-
-           
             <!-- /.card -->
           </div>
           <!-- /.col-md-6 -->
@@ -144,38 +145,19 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Progress</h3>
-                  <a href="javascript:void(0);">View Report</a>
+                  <h3 class="card-title">Users</h3>
+                  <a href="/users">View Users</a>
                 </div>
               </div>
               <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">125</span>
-                    <span>progress Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 33.1%
-                    </span>
-                    <span class="text-muted">Since last month</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-
-                <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="200"></canvas>
-                </div>
-
-                <div class="d-flex flex-row justify-content-end">
-                  <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> This year
-                  </span>
-
-                  <span>
-                    <i class="fas fa-square text-gray"></i> Last year
-                  </span>
-                </div>
+              <div class="d-flex">
+              <div class="sliderfortestandbest">
+                    <div class="imagesofsliderfortestandbest">
+                      <img class="imgofslider2" src="/dist/img/people1.jpg">
+                      <img class="imgofslider2" src="/dist/img/people2.jpg">
+                      <img class="imgofslider2" src="/dist/img/people3.jpg">
+                      </div>
+                  </div>
               </div>
             </div>
             <!-- /.card -->
@@ -186,58 +168,6 @@
       </div>
       <!-- /.container-fluid -->
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
@@ -253,5 +183,34 @@
 <script src="plugins/chart.js/Chart.min.js"></script>
 <script src="dist/js/demo.js"></script>
 <script src="dist/js/pages/dashboard3.js"></script>
-   
+<script>
+      var indexValue = 0;
+      function slideShow(){
+        setTimeout(slideShow, 2500);
+        var x;
+        const img = document.querySelectorAll("img.imgofslider");
+        for(x = 0; x < img.length; x++){
+          img[x].style.display = "none";
+        }
+        indexValue++;
+        if(indexValue > img.length){indexValue = 1}
+        img[indexValue -1].style.display = "block";
+      }
+      slideShow();
+    </script>
+    <script>
+      var indexValue = 0;
+      function slideShow1(){
+        setTimeout(slideShow1, 2500);
+        var x;
+        const img = document.querySelectorAll("img.imgofslider2");
+        for(x = 0; x < img.length; x++){
+          img[x].style.display = "none";
+        }
+        indexValue++;
+        if(indexValue > img.length){indexValue = 1}
+        img[indexValue -1].style.display = "block";
+      }
+      slideShow1();
+    </script>
 @endsection
